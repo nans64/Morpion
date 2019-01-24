@@ -85,7 +85,7 @@ def check_win
         elsif @A3.contenu == @B2.contenu && @B2.contenu == @C1.contenu && @A3.contenu == @C1.contenu
      
     return true    
-    else return not_yet
+    else return false
 
     end
 
