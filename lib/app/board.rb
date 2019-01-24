@@ -1,20 +1,28 @@
+require 'boardcase'
 class Board
-
 
 # Créer une méthode pour créer 9 instances de Boardcase de A1 à C3
   def initialize
-    @A1 = Boardcase.new
-  end #ainsi, un "Router.new" lancé par app.rb va créer automatique une instance "@controller"
 
-# A1 = Boardcase.New."Methode" => (A1,nil)
-# A2 = Boardcase.New."Methode"
-# A3 = Boardcase.New."Methode"
-# B1 = Boardcase.New."Methode"
-# B2 = Boardcase.New."Methode"
-# B3 = Boardcase.New."Methode"
-# C1 = Boardcase.New."Methode"
-# C2 = Boardcase.New."Methode"
-# C3 = Boardcase.New."Methode"
+    @A1 = Boardcase.new("A1", nil)
+    @A2 = Boardcase.new("A2", nil)
+    @A3 = Boardcase.new("A3", nil)
+    @B1 = Boardcase.new("B1", nil)
+    @B2 = Boardcase.new("B2", nil)
+    @B3 = Boardcase.new("B3", nil)
+    @C1 = Boardcase.new("C1", nil)
+    @C2 = Boardcase.new("C2", nil)
+    @C3 = Boardcase.new("C3", nil)
+
+  end
+
+  def check(choice)
+    
+    # pour verifier
+
+
+   binding.pry
+  end
 
   def modify
   	# Modifier le contenu de notre instance 
@@ -24,6 +32,7 @@ class Board
 
 
   def read
+
   	# Lecture de l'ensemble des valeurs
   	# Renvoyer l'ensemble des couples de valeurs (A1,A2 = X) (C1,C2 = O)
   end

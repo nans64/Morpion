@@ -1,4 +1,4 @@
-$:.unshift File.expand_path('../../app', __FILE__)
+$:.unshift File.expand_path('../../lib/app', __FILE__)
 require 'game'
 
 class Views
@@ -27,11 +27,23 @@ class Views
 	end
 
 	def round
-		puts "Tour #{nombre_de_tour} :  Joueur 1 entrez votre case" # View.round
-		value = gets.chomp.to_s     
-	    return value = {  x: value }
 
-	end
+		while true
+			puts "Choisissez une valeur"
+			choice = gets.chomp.to_s
+			array = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"]
+        
+        case array.include?(choice)
+         when true
+         	puts "Vous cochez la case #{choice} "
+         	return choice
+         else 
+         	puts "CASE INVALIDE !"
+        	 	
+         end
+     	end
+    end
+
 
 	def end_of_the_game
 		# FIN DU JEU

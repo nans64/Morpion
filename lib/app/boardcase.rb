@@ -1,9 +1,10 @@
 class Boardcase
 
-	def iniatialize(valeur,contenu)
-# Créer une méthode qui "create" va créer l'objet boardcase (valeur, contenu)
-	
-# Contenu = "X" ou "O" ou nil
+	attr_reader :valeur, :contenu
+
+	def initialize(valeur, contenu)
+		@valeur = valeur
+		@contenu = contenu
 	end
 
 end
