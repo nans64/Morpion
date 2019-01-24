@@ -29,8 +29,7 @@ while true
   else 
   puts "La case a bien été ajouté au morpion"
   @checking.push(choice)
-
-  puts @checking
+#  puts @checking
   modify(choice, valeur)
   return true    
   end
@@ -48,8 +47,8 @@ def modify(numero, valeur)
       if @my_array[i].contenu == numero
       then
       @my_array[i].contenu = valeur
-      puts "J'ai réussi à ajouter une valeur"
-      puts @my_array[i].contenu      
+#      puts "J'ai réussi à ajouter une valeur"
+#      puts @my_array[i].contenu      
       return true
       else
          i = i + 1
@@ -63,28 +62,28 @@ def check_win
 
 
     if @A1.contenu == @A2.contenu && @A1.contenu == @A3.contenu && @A2.contenu == @A3.contenu then
-    puts "Vous avez gagné"
+     
     return true
     elsif @B1.contenu == @B2.contenu && @B1.contenu == @B3.contenu && @B2.contenu == @B3.contenu
-    puts "Vous avez gagné"
+     
     return true    
         elsif @C1.contenu == @C2.contenu && @C1.contenu == @C3.contenu && @C2.contenu == @C3.contenu
-    puts "Vous avez gagné"
+     
     return true    
         elsif @A1.contenu == @B1.contenu && @B1.contenu == @C1.contenu && @C1.contenu == @A1.contenu
-    puts "Vous avez gagné"
+     
     return true    
         elsif @A2.contenu == @B2.contenu && @B2.contenu == @C2.contenu && @C2.contenu == @A2.contenu
-    puts "Vous avez gagné"
+     
     return true    
         elsif @A3.contenu == @B3.contenu && @B3.contenu == @C3.contenu && @C3.contenu == @A3.contenu
-    puts "Vous avez gagné"
+     
     return true    
         elsif @A1.contenu == @B2.contenu && @B2.contenu == @C3.contenu && @A1.contenu == @C3.contenu
-    puts "Vous avez gagné"
+     
     return true    
         elsif @A3.contenu == @B2.contenu && @B2.contenu == @C1.contenu && @A3.contenu == @C1.contenu
-    puts "Vous avez gagné"
+     
     return true    
     else return not_yet
 
@@ -93,16 +92,13 @@ def check_win
 
 end
 
-
-  def end_of_the_game
-
-  	# Comparaison des valeurs si vainqueur ou non
-  	# Si vainqueur on renvoit une variable X ou O est vainqueur
-  	# Renvoyer au game FIN DE PARTIE -> On renvoit X ->>> GAME Compare cette valeur X pour la comparer à l'instance Player (Nans,X) 
-  	# SI X = X alors Nans est gagnant
-  	# Return view qui arrete la boucle du jeu
-
-
+  def show_board
+#binding.pry
+    puts "  #{@A1.contenu}  |  #{@A2.contenu}  |  #{@A3.contenu}  "
+    puts "-----------------"
+    puts "  #{@B1.contenu}  |  #{@B2.contenu}  |  #{@B3.contenu}  "
+    puts "-----------------"
+    puts "  #{@C1.contenu}  |  #{@C2.contenu}  |  #{@C3.contenu}  "
   end
 
 end

@@ -1,17 +1,9 @@
 $:.unshift File.expand_path('../../lib/app', __FILE__)
 require 'game'
+require 'board'
+require 'boardcase'
 
 class Views
-
-
-      	#############################################################
-        # puts "Tour #{nombre_de_tour} :  Joueur 1 entrez votre case" 
-        # tour1 = get.chomp
-        # C1 -> On envoit la valeur sur le board (C1,X)
-
-		# Verifier si le joueur 1 dispose d'une combinaison gagnante -> A partir du 6 eme tour 
-		# Valeur tour + 1
-		#############################################################
 
 	def start_game
 
@@ -44,10 +36,28 @@ class Views
      	end
     end
 
+  def end_of_the_game
+    
+puts "#################################################"
+puts "#                                               #"
+puts "#                                               #"
+puts "#                    WINNER                     #"
+puts "#                                               #"
+puts "#                                               #"
+puts "#################################################"
 
-	def end_of_the_game
-		# FIN DU JEU
-		# return break
+  end	
+
+  def start_again
+
+puts "#################################################"
+puts "#                                               #"
+puts "#                                               #"
+puts "#                 START AGAIN                   #"
+puts "#                                               #"
+puts "#                                               #"
+puts "#################################################"
+
 	end
 
 end

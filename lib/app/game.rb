@@ -28,7 +28,7 @@ class Game
       case @round_number # Déroulé des tour
       when 1
       	############################################################# X
-        
+         @board.show_board # Display the board
          puts "Tour #{@round_number} :  #{@player1.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"X") 
@@ -41,7 +41,7 @@ class Game
 
 
       when 2
-         
+         @board.show_board # Display the board         
       	 puts "Tour #{@round_number} :  #{@player2.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"O")     
@@ -51,6 +51,7 @@ class Game
          end         
 		# Call boardcase avec le couple de valeur (A3,X) # On récupére seulement A3 car X est ecrit en string
       when 3
+         @board.show_board # Display the board        
      	 puts "Tour #{@round_number} :  #{@player1.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"X")         
@@ -59,6 +60,7 @@ class Game
          end 
 
 	  when 4
+         @board.show_board # Display the board      
 	  	 puts "Tour #{@round_number} :  #{@player2.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"O")         
@@ -68,6 +70,7 @@ class Game
          end 
 
 	  when 5
+         @board.show_board # Display the board      
 	  	 puts "Tour #{@round_number} :  #{@player1.instance_variable_get("@player_name")} entrez votre case" 
         choice = @views.round
         result = @board.check(choice,"X")         
@@ -76,9 +79,13 @@ class Game
           @round_number = @round_number + 1
          else 
          end 
-         if win == true then break else end 
-
+         if win == true then
+          @views.end_of_the_game 
+          puts "#{@player1.instance_variable_get("@player_name")} a gagné la partie"
+          break 
+          else end 
 	  when 6
+         @board.show_board # Display the board      
 	  	 puts "Tour #{@round_number} :  #{@player2.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"O")     
@@ -86,9 +93,13 @@ class Game
          if result == true then @round_number = @round_number + 1
          else 
          end 
-        if win == true then break else end 
-
+        if win == true then
+          @views.end_of_the_game 
+          puts "#{@player2.instance_variable_get("@player_name")} a gagné la partie"
+          break 
+          else end 
 	  when 7
+         @board.show_board # Display the board      
          puts "Tour #{@round_number} :  #{@player1.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"X")
@@ -96,27 +107,40 @@ class Game
          if result == true then @round_number = @round_number + 1
          else 
          end 
-         if win == true then break else end 
-
+         if win == true then
+          @views.end_of_the_game 
+          puts "#{@player1.instance_variable_get("@player_name")} a gagné la partie"
+          break 
+          else end 
 	  when 8
-	     puts "Tour #{@round_number} :  #{@player2.instance_variable_get("@player_name")} entrez votre case" 
+         @board.show_board # Display the board      
+	       puts "Tour #{@round_number} :  #{@player2.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"O")         
          if result == true then @round_number = @round_number + 1
          else 
          end 
-         if win == true then break else end 
-
+         if win == true then 
+          @views.end_of_the_game 
+          puts "#{@player2.instance_variable_get("@player_name")} a gagné la partie"
+          break 
+          else end 
 	  when 9
-	     puts "Tour #{@round_number} :  #{@player1.instance_variable_get("@player_name")} entrez votre case" 
+         @board.show_board # Display the board      
+	       puts "Tour #{@round_number} :  #{@player1.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"X")         
          if result == true then @round_number = @round_number + 1
          else 
          end 
-         if win == true then break else end 
+
+         if win == true then 
+          @views.end_of_the_game 
+          puts "#{@player1.instance_variable_get("@player_name")} a gagné la partie"
+          break 
+          else end 
       else
-        puts "Fin du jeu, il n'y a pas de gagnant" 
+        @views.start_again
       	break
       end
     end
