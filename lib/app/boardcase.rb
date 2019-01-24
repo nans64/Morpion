@@ -1,6 +1,6 @@
 class Boardcase
 
-	attr_reader :valeur, :contenu
+	attr_accessor :valeur, :contenu
 
 	def initialize(valeur, contenu)
 		@valeur = valeur
