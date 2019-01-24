@@ -38,12 +38,9 @@ class Game
          choice = @views.round
          result = @board.check(choice,"X")
          end 
-        # On récupére seulement A3 car X est ecrit en string
-		# Valeur tour + 1 # round_number = round_number + 1
-		#############################################################
+
 
       when 2
-      	############################################################## O
          
       	 puts "Tour #{@round_number} :  #{@player2.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
@@ -53,21 +50,15 @@ class Game
          else 
          end         
 		# Call boardcase avec le couple de valeur (A3,X) # On récupére seulement A3 car X est ecrit en string
-		#############################################################
       when 3
-      	############################################################# X
      	 puts "Tour #{@round_number} :  #{@player1.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"X")         
          if result == true then @round_number = @round_number + 1
          else 
          end 
-        # puts "Tour #{round_number} :  Joueur 1 entrez votre case" 
-		# Call boardcase avec le couple de valeur (A3,X) # On récupére seulement A3 car X est ecrit en string
-		# Valeur tour + 1 # round_number = round_number + 1
-		#############################################################
+
 	  when 4
-	  	############################################################# O
 	  	 puts "Tour #{@round_number} :  #{@player2.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"O")         
@@ -75,25 +66,19 @@ class Game
          else 
 
          end 
-        # puts "Tour #{round_number} :  Joueur 2 entrez votre case" 
-		# Call boardcase avec le couple de valeur (A3,X) # On récupére seulement A3 car X est ecrit en string
-		# Valeur tour + 1 # round_number = round_number + 1
-		#############################################################
+
 	  when 5
-	  	############################################################# X
 	  	 puts "Tour #{@round_number} :  #{@player1.instance_variable_get("@player_name")} entrez votre case" 
         choice = @views.round
         result = @board.check(choice,"X")         
-         if result == true then @round_number = @round_number + 1
+         if result == true then 
+          win = @board.check_win
+          @round_number = @round_number + 1
          else 
          end 
-        # puts "Tour #{round_number} :  Joueur 1 entrez votre case" 
-		# Call boardcase avec le couple de valeur (A3,X) # On récupére seulement A3 car X est ecrit en string
-		# Verifier si le joueur "X" dispose d'une combinaison gagnante
-		# Valeur tour + 1 # round_number = round_number + 1
-		#############################################################
+         if win == true then break else end 
+
 	  when 6
-	  	############################################################# O
 	  	 puts "Tour #{@round_number} :  #{@player2.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"O")     
@@ -101,14 +86,9 @@ class Game
          if result == true then @round_number = @round_number + 1
          else 
          end 
+        if win == true then break else end 
 
-        # puts "Tour #{round_number} :  Joueur 2 entrez votre case" 
-        # Call boardcase avec le couple de valeur (A3,X) # On récupére seulement A3 car X est ecrit en string # @Board.modify
-		# Verifier si le joueur "O" dispose d'une combinaison gagnante # @Board.read
-		# Valeur tour + 1 # round_number = round_number + 1
-		#############################################################
 	  when 7
-	    ############################################################# X
          puts "Tour #{@round_number} :  #{@player1.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"X")
@@ -116,44 +96,27 @@ class Game
          if result == true then @round_number = @round_number + 1
          else 
          end 
-        # puts "Tour #{round_number} :  Joueur 1 entrez votre case" # View.round
-        # Call boardcase avec le couple de valeur (A3,X) # On récupére seulement A3 car X est ecrit en string
-		# Verifier si le joueur 1 dispose d'une combinaison gagnante -> A partir du 6 eme tour 
-		# Valeur tour + 1 # round_number = round_number + 1
-		############################################################# 	
+         if win == true then break else end 
+
 	  when 8
-	    ############################################################# O
 	     puts "Tour #{@round_number} :  #{@player2.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"O")         
          if result == true then @round_number = @round_number + 1
          else 
          end 
-        # puts "Tour #{round_number} :  Joueur 2 entrez votre case" 
-        # Call boardcase avec le couple de valeur (A3,X) # On récupére seulement A3 car X est ecrit en string
-		# Verifier si le joueur 1 dispose d'une combinaison gagnante -> A partir du 6 eme tour 
-		# Valeur tour + 1 # round_number = round_number + 1
-		#############################################################  	
+         if win == true then break else end 
+
 	  when 9
-	    ############################################################# X
 	     puts "Tour #{@round_number} :  #{@player1.instance_variable_get("@player_name")} entrez votre case" 
          choice = @views.round
          result = @board.check(choice,"X")         
          if result == true then @round_number = @round_number + 1
          else 
          end 
-        # puts "Tour #{round_number} :  Joueur 1 entrez votre case" 
-        # Call boardcase avec le couple de valeur (A3,X) # On récupére seulement A3 car X est ecrit en string
-		# Verifier si le joueur 1 dispose d'une combinaison gagnante -> A partir du 6 eme tour 
-		# Valeur tour + 1 # round_number = round_number + 1
-		#############################################################		
-	    ############################################################# FIN DU GAME
-        # puts FIN DU GAME MATCH NUL
-		# BREAK
-		# 
-		#############################################################	
+         if win == true then break else end 
       else
-        puts "Fin du jeu" #si l'utilisateur saisit une entrée non prévue, il retourne au début du "while true". C'est pour ça que la boucle est infinie: potentiellement, il peut se gourer jusqu'à la fin des temps :)
+        puts "Fin du jeu, il n'y a pas de gagnant" 
       	break
       end
     end
