@@ -18,9 +18,10 @@ class Board
 
   def modify
   	# Modifier le contenu de notre instance 
-  	# Exemple : C1 -> Modifier l'instance C1 et attribuer la valeur du joueur "X" ou "O"
+  	# Exemple : C1 -> Modifier l'instance C1 et attribuer la valeur du joueur "X" ou "O" si instance = nil then modify else return views
   	# A1 = (A1,X)
   end 
+
 
   def read
   	# Lecture de l'ensemble des valeurs

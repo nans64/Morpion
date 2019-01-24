@@ -1,5 +1,5 @@
-$:.unshift File.expand_path('./../lib/app', __FILE__)
-require '##'
+$:.unshift File.expand_path('../../app', __FILE__)
+require 'game'
 
 class Views
 
