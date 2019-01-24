@@ -8,4 +8,6 @@ Perso j'ai fini en PLS, mais heureusement Nans...Le Grand Duc Nans... était ave
 
 Aujourd'hui tu trouveras ton bonheur en lisant ce code ! Les reponses à toutes tes questions existentielles se trouvent enfoui dans ce precieux grimoire.  
 
+Pour lancer le morpion tu devras lancer app.rb ensuite tu peux te laisser guider par les instructions.
+
 Nans Noel et NikkiThp
