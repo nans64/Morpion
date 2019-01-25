@@ -58,6 +58,18 @@ puts "#                                               #"
 puts "#                                               #"
 puts "#################################################"
 
-	end
+while true
+  puts "Do you want to play again ? (yes/no) "
+  play_again = gets.chomp
+
+  if play_again == "yes"
+    return true
+  elsif play_again == "no"
+    return false
+  else
+  end
+end
+
+end
 
 end
